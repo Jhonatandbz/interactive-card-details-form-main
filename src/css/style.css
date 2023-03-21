@@ -200,11 +200,10 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 
     .itens{
         display: flex;
-        min-height: 100vh;
+        min-height: 97vh;
         align-items: center;
         justify-content: center;
         gap: 80px;
-
     }
 
     .cards{
@@ -237,4 +236,12 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 .errorBorder{
     border: 2px solid;
     border-color: var(--red);
+}
+
+.attribution{
+    height: 20px;
+    font-size: 14px;
+    bottom: 10px;
+    text-align: right;
+
 }
