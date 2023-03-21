@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
@@ -15,60 +15,94 @@
   <link rel="stylesheet" href="./src/css/reset.css">
   <link rel="stylesheet" href="./src/css/style.css">
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
   <main>
     <div class="container">
+
       <img src="./src/images/bg-main-desktop.png" alt="main desktop" class="mainDesktop">
       <img src="./src/images/bg-main-mobile.png" alt="main mobile" class="mainMobile">
+
       <div class="itens">
+
         <div class="cards">
-          <img src="./src/images/bg-card-front.png" alt="front side of the card" class="card frontCard">
-          <img src="./src/images/bg-card-back.png" alt="back side of the card" class="card backCard">
-        </div>
-        <div class="inputs">
-          <p>CARDHOLDER NAME</p>
-          <input type="text" placeholder="e.g. Jane Appleseed" class="input cardholderName">
-          <p>CARD NUMBER</p>
-          <input type="text" placeholder="e.g. 1234 5678 9123 0000" class="input cardNumber">
-          <div class="date">
-            <p>EXP. DATE (MM/YY)</p>
-            <input type="number" class="input expDateMonth">
-            <input type="number" class="input expDateYear">
-            <p>CVC</p>
-            <input type="text" placeholder="e.g. 123" class="input cvc">
-            <button class="confirm"></button>
+
+          <div class="frontDetails">
+            <img src="./src/images/bg-card-front.png" alt="front side of the card" class="card frontCard">
+            <img src="./src/images/card-logo.svg" alt="Card logo" class="circle">
+
+            <div class="details">
+              <span class="spanNumber">0000 0000 0000 0000</span>
+              <div class="nameDate">
+                <span class="spanName" >Jane Appleseed</span>
+                  <div class="date">
+                    <span class="spanMonth">00</span> / <span class="spanYear">00</span>
+                  </div>
+              </div>
+            </div>
           </div>
+
+          <div class="backDetails">
+            <img src="./src/images/bg-card-back.png" alt="back side of the card" class="card backCard">
+            <div class="details">
+              <span class="spanCvc">000</span>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="inputs">
+          <div class="contInp">
+            <div class="inputContainer name">
+
+              <label for="Name">CARDHOLDER NAME</label>
+              <input type="text" id="Name" maxlength="26" placeholder="e.g. Jane Appleseed">
+              <span class="error Name"></span>
+            </div>
+
+            <div class="inputContainer number">
+
+              <label for="Number">CARD NUMBER</label>
+              <input type="text" id="Number" maxlength="16" placeholder="e.g. 1234 5678 9123 0000" >
+              <span class="error Number"></span>
+
+            </div>
+              
+            <div class="dateCvc">
+
+              <div class="inputContainer date">
+                <label for="month">EXP. DATE (MM/YY)</label>
+                <div class="mmYy">
+                  <input type="number" id="Month" placeholder="MM">
+                  <input type="number" id="Year" placeholder="YY">
+                </div>
+                  <span class="error Month"></span>
+                  <span class="error hide"></span>
+              </div>
+              
+              <div class="inputContainer cvc">
+                <label for="cvcCode">CVC</label>
+                <input type="text" id="Cvc" maxlength="3" placeholder="e.g. 123">
+                <span class="error Cvc"></span>
+                </div>
+            </div>
+          </div>
+
+          <div class="complete hide">
+            <img src="./src/images/icon-complete.svg" alt="Complete icon" class="completeIcon">
+            <h2>THANK YOU!</h2>
+            <p>We've added your card details</p>
+          </div>
+
+          <button class="confirm">Confirm</button>
+
         </div>
       </div>
     </div>
   </main>
 
-  <!-- 0000 0000 0000 0000
-  Jane Appleseed
-  00/00
-
-  000
-
-  Cardholder Name
-  e.g. Jane Appleseed
-
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
-  Confirm
+  <!-- 
 
   --Completed state start--
 
@@ -80,5 +114,6 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
+  <script src="./src/js/index.js"></script>
 </body>
 </html>

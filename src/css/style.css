@@ -1,39 +1,220 @@
-body{
+*{
     font-family: 'Space Grotesk', sans-serif;
+}
+body{
     font-size: 18px;
 }
 
-.input{
-    border-radius: 5px;
+
+:root{
+    --linear-gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+    --red: hsl(0, 100%, 66%);
+
+    --white: hsl(0, 0%, 100%);
+    --light-grayish-violet: hsl(270, 3%, 87%);
+    --dark-grayish-violet: hsl(279, 6%, 55%);
+    --very-dark-violet: hsl(278, 68%, 11%);
 }
 
+
+/* =============================== Cards =============================== */
+
+.error{
+    color: var(--red);
+    font-size: 14px;
+}
+
+.frontDetails{
+    display: inline-block;
+    position: relative;
+}
+
+.frontDetails .circle{
+    position: absolute;
+    left: 25px;
+    top: 25px;
+}
+
+.frontDetails .details{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    top: 110px;
+    left: 20px;
+    color:  var(--light-grayish-violet);
+
+}
+
+.frontDetails .details .spanNumber{
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+.frontDetails .details .nameDate{
+    display: flex;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.frontDetails .details .spanName{
+    display: flex;
+    width: 275px;
+    text-transform: uppercase;
+    font-size: 14px;
+
+}
+
+.backDetails{
+    display: inline-block;
+    position: relative;
+}
+
+.backDetails .details{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    top: 92px;
+    right: 70px;
+    color: white;
+
+}
+
+.backDetails .details .spanCvc{
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+
 .card{
-    width: 350px;
+    width: 375px;
 }
 
 .card.backCard{
-    width: 350px;
     margin-left: 100px;
 }
+
+
+/* =============================== Inputs =============================== */
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contInp{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    min-width: 450px;
+    min-height: 280px;
+    gap: 10px;
+}
+
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+label{
+    font-size: 14px;
+}
+
+input, .confirm{
+
+    text-indent: 10px;
+    border-radius: 10px;
+    width: 350px;
+    height: 40px;
+    border: 2px solid;
+    border-color: var(--light-grayish-violet);
+}
+
+input:focus{
+    outline: 0;
+    border: 2px solid;
+    border-color: var(--linear-gradient);
+}
+
+input::placeholder { 
+    font-size: 15px;
+    color: var(--light-grayish-violet);
+ }
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.dateCvc{
+    display: flex;
+    gap: 20px;
+}
+
+.mmYy{
+    display: flex;
+    gap: 10px;
+}
+
+
+#Month, #Year{
+    width: 70px;
+}
+
+#Cvc{
+    width: 180px;
+}
+
+/* =============================== Confirm =============================== */
+
+.confirm{
+    letter-spacing: 1px;
+    font-size: 15px;
+    cursor: pointer;
+    color: var(--white);    
+    background-color: var(--very-dark-violet);
+}
+
+.confirm:active{
+    transform: scale(0.98);
+}
+
+.complete{
+    display: flex;
+    flex-direction: column;
+    min-width: 450px;
+    min-height: 200px;
+    align-items: center;
+}
+
+.complete .completeIcon{
+    width: 80px;
+    height: 80px;
+}
+/* =============================== Media =============================== */
 
 @media screen and (min-width: 376px) {
 
     .itens{
         display: flex;
-        min-width: 100vw;
         min-height: 100vh;
         align-items: center;
-        justify-content: space-around;
-        
+        justify-content: center;
+        gap: 80px;
+
     }
 
     .cards{
-        min-width: 450px;
-        min-height: 450px;
+        min-width: 500px;
+        min-height: 500px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
     }
+
     
     .container .mainDesktop{
         position: fixed;
@@ -47,4 +228,13 @@ body{
 
 @media screen and (max-width: 375px){
     
+}
+
+.hide{
+    display: none;
+}
+
+.errorBorder{
+    border: 2px solid;
+    border-color: var(--red);
 }
